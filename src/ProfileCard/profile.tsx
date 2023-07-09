@@ -1,12 +1,17 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { PersonalInfo } from '../App';
 
 type Props = PersonalInfo &{
     imageUrl?: string;
 }
 
+
+
 const ProfileCard  = (prop: Props) => {
+
+
+
     return(
         <View style={styles.container}>
             <Image source={{uri: prop.imageUrl}} style={styles.image}/>
@@ -14,7 +19,9 @@ const ProfileCard  = (prop: Props) => {
                 <Text style={styles.title}>{prop.name}</Text>
                 <Text style={styles.title}>{prop.age}</Text>
             </View>
-            <Text style={styles.btn}>{prop.buttons}</Text>
+            <TouchableOpacity>
+                <Text style={styles.btn}>{prop.buttons}</Text>
+            </TouchableOpacity>
         </View>
     )
 }
